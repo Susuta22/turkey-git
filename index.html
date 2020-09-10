@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang='ja'>
+    <head>
+        <meta charset='utf-8'>
+        <title>トルコ観光局</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel='stylesheet' href='main.css'>
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h2 id='header-title'><i class="fas fa-star-and-crescent"></i>トルコ観光局</h2>
+        </header>
+        
+        <div class='container'>
+            <div id='wrapper' class='row'>
+                <div id='side' class='col-sm-3 pl-0 pr-0'>
+                    <ul id='side-list' class='text-center'>
+                        <li id='list-1'
+                            :class="{active: activeTab === 'istanbul'}"
+                            @click="activeTab = 'istanbul'"
+                        ><strong>イスタンブール</strong></li>
+                        
+                        <li id='list-2'
+                            :class="{active: activeTab === 'cappadocia'}"
+                            @click="activeTab = 'cappadocia'"
+                        ><strong>カッパドキア</strong></li>
+                        
+                        <li id='list-3'
+                            :class="{active: activeTab === 'efes'}"
+                            @click="activeTab = 'efes'"
+                        ><strong>エフェス</strong></li>
+                        
+                        <li id='list-4'
+                            :class="{active: activeTab === 'konya'}"
+                            @click="activeTab = 'konya'"
+                        ><strong>コンヤ</strong></li>
+                        
+                        <li id='list-5'
+                            :class="{active: activeTab === 'pamukkale'}"
+                            @click="activeTab = 'pamukkale'"
+                        ><strong>パムッカレ</strong></li>
+                        
+                        <li id='list-6'
+                            :class="{active: activeTab === 'mardin'}"
+                            @click="activeTab = 'mardin'"
+                        ><strong>マルディン</strong></li>
+                        
+                        <li id='list-top'
+                            :class="{active: activeTab === 'top'}"
+                            @click="activeTab = 'top'"
+                        ><strong>TOP</strong></li>
+                    </ul>
+                    <!--<div class='link'>
+                        <h5 class='link-title'>関連リンク</h5>
+                        <ul>
+                            <li>
+                                <a href='wheatracoon4.sakura.ne.jp'><img src='DSC_2468.JPG' alt=''></a>
+                                <p class='link-caption mt-2'>旅行の写真があるよ</p>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+                <div id='main' class='col-sm-9 pr-0 pl-0'>
+                    <div v-show="activeTab === 'top'">
+                        <div class='slides'>
+                            <p><img src='photos/slides/DSC_2553.JPG' alt=''></p>
+                            <p><img src='photos/slides/DSC_2930.JPG' alt=''></p>
+                            <p><img src='photos/slides/DSC_3202.JPG' alt=''></p>
+                            <p><img src='photos/slides/DSC_3269.JPG' alt=''></p>
+                            <p><img src='photos/slides/DSC_3280.JPG' alt=''></p>
+                            <p><img src='photos/slides/DSC_7575.JPG' alt=''></p>
+                        </div>
+                        
+                        <div class='row'>
+                            <table class='table table-borderd col-sm-6'>
+                                <thead>
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr><th>首　都</th><td>アンカラ</td></tr>
+                                    <tr><th>言　語</th><td>トルコ語</td></tr>
+                                    <tr><th>通　貨</th><td>トルコリラ(TR) 1TR=約17円</td></tr>    
+                                    <tr><th>宗　教</th><td>イスラム教</td></tr>
+                                    <tr><th>アクセス</th><td>日本からイスタンブルへの直行便あり約13時間</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div v-show="activeTab === 'istanbul'">
+                        <div class='area'><h4>イスタンブル</h4></div>
+                        <div class='text'>
+                            ビザンツ帝国、オスマン帝国の首都として栄えた歴史を持つトルコ最大の都市<br>
+                        </div>
+                        <div class='photos'>
+                            <div class='photo'><img src='photos/istanbul/DSC_3073.JPG' alt=''><p class='caption'>ブルーモスクの別名で有名なスルタンアフメトジャーミィ</p></div>
+                            <div class='photo'><img src='photos/istanbul/DSC_3221.JPG' alt=''><p class='caption'>アヤソフィア大聖堂</p></div>
+                            <div class='photo'><img src='photos/istanbul/DSC_3163.JPG' alt=''><p class='caption'>アヤソフィア大聖堂内部</p></div>
+                            <div class='photo'><img src='photos/istanbul/DSC_3116.JPG' alt=''><p class='caption'>イスタンブル地下宮殿</p></div>
+                        </div>
+                        <div class='row mt-5'>
+                            <table class="table table-borderd col-sm-5">
+                                <thead>    
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>アクセス</th>
+                                        <td>日本から飛行機で13時間</td>
+                                    </tr>
+                                    <tr>
+                                        <th>料　金</th>
+                                        <td>ブルーモスク : 無料<br>
+                                            アヤソフィア大聖堂 : 100TL(約1700円)<br>
+                                            イスタンブル地下宮殿 : 20TL(約340円)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>その他</th>
+                                        <td>ブルーモスク周辺には親日家を名乗り日本人をターゲットにする
+                                            悪質な客引きがいるので注意しよう</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class='map-area'>
+                                <div id='map_1'></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div v-show="activeTab === 'cappadocia'">
+                        <div class='area'><h4>カッパドキア</h4></div>
+                        <div class='text'>
+                            雨風により浸食された石灰岩が作り出す景色はまるで異世界のよう<br>
+                            近郊にはキリスト教によって掘られた地下都市もある
+                        </div>
+                        <div class='photos'>    
+                            <div class='photo'><img src='photos/cappadocia/DSC_2521.JPG' alt='気球ツアー'><p class='caption'>カッパドキア定番の気球ツアー</p></div>
+                            <div class='photo'><img src='photos/cappadocia/DSC_2751.JPG' alt=''><p class='caption'>カッパドキアの奇岩群</p></div>
+                            <div class='photo'><img src='photos/cappadocia/DSC_2813.JPG' alt=''><p class='caption'>ラクダ岩</p></div>
+                            <div class='photo'><img src='photos/cappadocia/DSC_2851.JPG' alt=''><p class='caption'>デリンクユの地下都市</p></div>
+                            <div class='photo'><img src='photos/cappadocia/DSC_2777.JPG' alt=''><p class='caption'>カッパドキア各地に点在するキノコ岩</p></div>
+                        </div>
+                        <div class='row mt-5'>
+                            <table class="table table-borderd col-sm-5">
+                                <thead>    
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>アクセス</th>
+                                        <td>イスタンブルからバスで10～12時間</td>
+                                    </tr>
+                                    <tr>
+                                        <th>料　金</th>
+                                        <td>気球ツアーはどの会社も15000円ほど<br>
+                                            カッパドキアの見どころを巡るツアーは約5000円,
+                                            ツアー会社により見学箇所が違うので要確忍
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>その他</th>
+                                        <td>天候によって1週間以上気球が飛ばない場合もある</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class='map-area'>
+                                <div id='map_2'></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div v-show="activeTab === 'efes'">
+                        <div class='area'><h4>エフェス</h4></div>
+                        <div class='text'>
+                            古代ギリシア人により作られた港湾都市、保存状態が良く当時の人々の暮らしを今に伝える<br>
+                            近くには聖母マリアの終の住みかとされる「聖母マリアの家」がある
+                        </div>
+                        <div class='photos'>
+                            <div class='photo'><img src='photos/efes/DSC_3216.JPG' alt=''><p class='caption'>ケルケス図書館</p></div>
+                            <div class='photo'><img src='photos/efes/DSC_3246.JPG' alt=''><p class='caption'>トラヤヌスの泉</p></div>
+                            <div class='photo'><img src='photos/efes/DSC_3259.JPG' alt=''><p class='caption'>ハドリアヌス神殿</p></div>
+                            <div class='photo'><img src='photos/efes/DSC_3282.JPG' alt=''><p class='caption'>巨大な円形劇場は今もイベントで使用されている</p></div>
+                            <div class='photo'><img src='photos/efes/DSC_2443.JPG' alt=''><p class='caption'>聖母マリアの家、毎年バチカンから使者が訪れている</p></div>
+                        </div>
+                        <div class='row mt-5'>
+                            <table class="table table-borderd col-sm-5">
+                                <thead>    
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>アクセス</th>
+                                        <td>イズミルからセルチュクまでバスで1時間<br>
+                                            セルチュクから遺跡までバスで5分ほど<br>
+                                            徒歩であれば20分
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>料　金</th>
+                                        <td>エフェス遺跡 : 100TL(約1700円)<br>聖母マリアの家 : 45TL(約750円)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class='map-area'>
+                                <div id='map_3'></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div v-show="activeTab === 'konya'">
+                        <div class='area'><h4>コンヤ</h4></div>
+                        <div class='text'>
+                            コンヤ発祥のイスラム教神秘主義教団、メヴラーナ<br>
+                            彼らの宗教儀式の旋舞「セマー」、メヴラーナ博物館など一見の価値あり
+                        </div>
+                        <div class='photos'>
+                            <div class='photo'><img src='photos/konya/DSC_2448.JPG' alt=''><p class='caption'>メヴラーナ博物館とセリムモスク</p></div>
+                            <div class='photo'><img src='photos/konya/DSC_7781.JPG' alt=''><p class='caption'>メヴラーナの円舞「セマー」</p></div>
+                        </div>
+                        <div class='row mt-5'>
+                            <table class="table table-borderd col-sm-5 row">
+                                <thead>    
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>アクセス</th>
+                                        <td>イスタンブルから飛行機で80分<br>アンカラからバスで4時間</td>
+                                    </tr>
+                                    <tr>
+                                        <th>観　光</th>
+                                        <td>毎週土曜日メヴラーナカルチャーセンターにてセマーを無料で公開</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class='map-area'>
+                                <div id='map_4'></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div v-show="activeTab === 'pamukkale'">
+                        <div class='area'><h4>パムッカレ</h4></div>
+                        <div class='text'>
+                            「パムッカレ」とは綿の城を意味し、石灰棚を登り切った先にはヒエラポリス遺跡がある
+                        </div>
+                        <div class='photos'>
+                            <div class='photo'><img src='photos/pamukkale/DSC_3347.JPG' alt=''><p class='caption'>温泉が上段から流れている</p></div>
+                            <div class='photo'><img src='photos/pamukkale/DSC_3315.JPG' alt=''><p class='caption'>石灰華段丘</p></div>
+                            <div class='photo'><img src='photos/pamukkale/DSC_3361.JPG' alt=''><p class='caption'>ヒエラポリス遺跡の円形劇場</p></div>
+                        </div>
+                        <div class='row mt-5'>
+                            <table class="table table-borderd col-sm-5">
+                                <thead>    
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>アクセス</th>
+                                        <td>デニズリからバスで約20分</td>
+                                    </tr>
+                                    <tr>
+                                        <th>料　金</th>
+                                        <td>石灰棚とヒエラポリス遺跡の入場券は共通で50TL(約800円)</td>
+                                    </tr>
+                                    <tr>
+                                        <th>その他</th>
+                                        <td>石灰棚の保護のため石灰棚内では靴を脱がなければならない、袋などがあると便利</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class='map-area'>
+                                <div id='map_5'></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div v-show="activeTab === 'mardin'">
+                        <div class='area'><h4>マルディン</h4></div>
+                        
+                        <div class='text'>
+                            急斜面にある旧市街は複雑で迷路のよう<br>
+                            迷って疲れ果てないように
+                        </div>
+                        
+                        <div class='photos'>
+                            <div class='photo'><img src='photos/mardin/DSC_3086.JPG'><p class='caption'>マルディン旧市街</p></div>
+                            <div class='photo'><img src='photos/mardin/DSC_3029.JPG'><p class='caption'>旧市街の路地</p></div>
+                            <div class='photo'><img src='photos/mardin/DSC_3076.JPG'><p class='caption'>カシミエ神学校</p></div>
+                        </div>
+                        <div class='row mt-5'>
+                            <table class="table table-borderd col-sm-5">
+                                <thead>    
+                                    <th>基本情報</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>アクセス</th>
+                                        <td>シャンルウルファからバスで4時間<br>
+                                            ガズィアンテプからバスで6時間
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>料　金</th>
+                                        <td>基本的に入場料のかかる施設などはない</td>
+                                    </tr>
+                                    <tr>
+                                        <th>注意点</th>
+                                        <td>市街地の内部は迷路のように入り組んでおり
+                                            急な階段も多いため動きやすい服装と事前の準備が必要
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class='map-area'>
+                                <div id='map_6'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>&copy; 2020 Y.S</footer>
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/vue-gallery.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwNlyZrm-4E5IQFoo69XaYY18A5TWH5vE&callback=initMap" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script src='main.js'></script>
+    </body>
+</html>

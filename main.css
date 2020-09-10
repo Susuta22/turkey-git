@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    background-color: #ff0000;
+    height: 75px;
+    position: relative;
+}
+
+#header-title {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform : translate(-50%,-50%);
+    transform: translateY(-50%, -50%);
+    margin-bottom: 0;
+}
+
+#main {
+    background-color: #f3f5f6;
+}
+
+#side {
+    background-color: #f3f5f6;
+}
+
+.slides {
+    text-align: center;
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+#side-list {
+    padding-left: 7px;
+    padding-right: 7px;
+    list-style: none;
+}
+
+#side-list li {
+    background-color: #ff6347;
+    margin-bottom: 2px;
+    height: 55px;
+    position: relative;
+    overflow: auto;
+}
+
+#side-list li strong {
+    color: white;
+    font-size: 17px;
+    position: absolute;
+    text-decoration: none;
+    left: 50%;
+    top: 50%;
+    -webkit-transform : translate(-50%,-50%);
+    transform: translateY(-50%, -50%);
+    margin-bottom: 0;
+    user-select: none;
+}
+
+#side-list li:first-child {
+    margin-top: 2px;
+}
+
+#side-list li:hover {
+    background-color: #fa9786;
+}
+
+.link {
+    text-align: center;
+    border: solid 1px #ff6347;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.link ul {
+    padding: 0;
+}
+
+.link-title {
+    color: white;
+    background-color: #ff6347;
+    margin-bottom: 0;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.link a img {
+    width: 100%;
+}
+
+.link ul li {
+    list-style: none;
+}
+
+.link-caption {
+    font-size: 14px;
+}
+
+.area {
+    text-align: center;
+    border-top: 1px solid #0c4ba2;
+    border-bottom: 1px solid #0c4ba2;
+    border-left: 5px solid #0c4ba2;
+    border-right: 5px solid #0c4ba2;
+}
+
+#time {
+    text-align: center;
+}
+
+.area {
+    margin-bottom: 3px;
+    margin-top: 4px;
+}
+
+.area h4 {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-family: 'Sawarabi Mincho', serif;
+}
+
+.photo {
+    width: 90%;
+}
+
+.photo img {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.text {
+    font-size: 17px;
+    font-family: 'Sawarabi Mincho', serif;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+ .caption {
+    text-align: center;
+    font-size: 14px;
+    color: #9c9689;
+}
+
+.table thead th {
+    border-bottom: none;
+    border-top: none;
+}
+
+.table {
+    margin-left: 15px;
+}
+
+#map_1 {
+    width: 350px;
+    height: 250px;
+}
+
+#map_2 {
+    width: 350px;
+    height: 250px;
+}
+
+#map_3 {
+    width: 350px;
+    height: 250px;
+}
+
+#map_4 {
+    width: 350px;
+    height: 250px;
+}
+
+#map_5 {
+    width: 400px;
+    height: 270px;
+}
+
+#map_6 {
+    width: 350px;
+    height: 250px;
+}
+
+.map-area {
+    margin-left: 12px;
+}
+
+tbody th {
+    width: 40%;
+}
+
+footer {
+    background-color: #e1c0b6;
+    text-align: center;
+}
